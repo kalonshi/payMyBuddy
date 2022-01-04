@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xlmns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<title>Pay My Buddy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">Add Connection</div>
+			<div class="panel-body">
+
+				<!-- <form th:action="@{/saveConnection}" method="post"> -->
+<form th:action="@{/saveConnection}" method="post">
+					<div class="col-md-6">
+						<div class="panel panel-info">
+							<div class="panel-heading">Select contact</div>
+							
+								<div class="form-group">
+									<label class="control-label">contacts</label> <select
+										id="user_id" name="user_id" class="form-control">
+										<option th:each="user : ${usersForConnections}"
+											th:value="${user.user_id}" th:utext="${user.email}" />
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label">pseudo</label> <input
+										class="form-control" type="text" name="label"
+										th:value="${connection.label}">
+
+								</div>
+
+
+
+
+							</div>
+						
+
+
+					</div>
+					<button type="submit" class="btn btn-info">Add</button>
+
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

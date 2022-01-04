@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xlmns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<title>Pay My Buddy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div layout:fragment="content">
+
+	<div class="col-md-4 col-md-offset-3 space">
+
+		<div class="panel-body">
+			<form th:action="@{/save_transfert}" method="post">
+
+				<div class="panel-heading md-3">Transfert</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="nom de votre banque"
+						name="banque">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="saississez votre numéro IBAN"
+						name="iban">
+				</div>
+
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="amount"
+						name="amount">
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Transfert</button>
+			</form>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
