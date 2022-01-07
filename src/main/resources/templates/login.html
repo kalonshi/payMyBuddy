@@ -1,14 +1,17 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 
 <meta charset="UTF-8">
 <title>Pay My Buddy</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
 	th:href="@{/css/bootstrap.min.css}" />
 <link rel="stylesheet" type="text/css" href="../static/css/style.css"
@@ -16,21 +19,25 @@
 
 </head>
 <body>
-<div class="col-md-4 col-md-offset-3 space">
+	<div class="col-md-4 col-md-offset-3 space">
 
 		<div class="panel-body ">
 			<form th:action="@{/login}" method="post">
- <div class="panel-heading md-2"style= "background-color:rgb(92, 185, 92) ;">PayMyBuddy</div>
- <div class="input-group">
- 
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-  </div>
-			<!-- 	<div class="panel-heading md-2"style= "background-color:rgb(92, 185, 92) ;">PayMyBuddy</div>
+				<div class="panel-heading md-2"
+					style="background-color: rgb(92, 185, 92);">PayMyBuddy</div>
+				<div class="input-group">
+
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-user"></i></span> <input id="email"
+						type="text" class="form-control" name="email" placeholder="Email">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-lock"></i></span> <input id="password"
+						type="password" class="form-control" name="password"
+						placeholder="Password">
+				</div>
+				<!-- 	<div class="panel-heading md-2"style= "background-color:rgb(92, 185, 92) ;">PayMyBuddy</div>
 				
 				<div class="form-group">
 					<input class="form-control " type="text" placeholder="email"
@@ -42,23 +49,23 @@
 				</div> -->
 
 				<div class="mb-3 form-check">
-						<input type="checkbox" class="form-check-input" id="loginStock">
-						<label class="form-check-label" for="loginStock">Remenber
-							me </label>
-					</div>
+					<input type="checkbox" class="form-check-input" id="loginStock">
+					<label class="form-check-label" for="loginStock">Remenber
+						me </label>
+				</div>
 				<div align="center" th:if="${param.error}">
 					<p style="font-size: 20; color: #FF1C19;">Wrong Login or
 						Password</p>
 				</div>
 				<button type="submit" class="btn btn-primary">Login</button>
 			</form>
-			<p> you are not register yet</p>
+			<p>you are not register yet</p>
 
-					<a class="btn btn-info" th:href="@{/register}">Register </a>
-				
+			<a class="btn btn-info" th:href="@{/register}">Register </a>
+
 		</div>
-		
+
 	</div>
-	
+
 </body>
 </html>

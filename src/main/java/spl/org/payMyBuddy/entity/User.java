@@ -1,9 +1,6 @@
 package spl.org.payMyBuddy.entity;
-
 import java.io.Serializable;
-
 import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,22 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
 import javax.persistence.OneToMany;
-
-
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
-public class User implements Serializable  {
+public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long user_id;
-
-	 @Column(length = 30, nullable = false, unique = true) 
+	
+	
+	@Column(length = 30, nullable = false, unique = true)
 	private String email;
-	/* @Column(length = 20, nullable = false) */
+
+	@Column(nullable = false)
 	private String password;
 
 	private Double solde;
@@ -53,10 +50,9 @@ public class User implements Serializable  {
 	public Long getUser_id() {
 		return user_id;
 	}
-
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
-	}
+	/*
+	 * public void setUser_id(Long user_id) { this.user_id = user_id; }
+	 */
 
 	public String getEmail() {
 		return email;
@@ -86,19 +82,15 @@ public class User implements Serializable  {
 		return connections;
 	}
 
-	public void setConnections(Collection<Connection> connections) {
-		this.connections = connections;
-	}
-
-	
-	
-	public Collection<Transaction> getTransactions() {
-		return transactions;
-	}
-
-	public void setTransactions(Collection<Transaction> transactions) {
-		this.transactions = transactions;
-	}
+	/*
+	 * public void setConnections(Collection<Connection> connections) {
+	 * this.connections = connections; }
+	 * 
+	 * public Collection<Transaction> getTransactions() { return transactions; }
+	 * 
+	 * public void setTransactions(Collection<Transaction> transactions) {
+	 * this.transactions = transactions; }
+	 */
 
 	public boolean isFunded(double payment) {
 		boolean isFunded = false;
@@ -109,6 +101,4 @@ public class User implements Serializable  {
 		return isFunded;
 	}
 
-	
-	
 }

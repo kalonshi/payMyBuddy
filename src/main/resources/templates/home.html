@@ -44,9 +44,9 @@
 								</select></td>
 								<td><input class="form-control" type="text"
 									name="description" placeholder="description"
-									th:value="${transaction.description}"></td>
+									th:value="${transactionDTO.description}"></td>
 								<td><input class="form-control" type="number" name="amount"
-									placeholder="amount €" th:value="${transaction.amount}"   min="1"
+									placeholder="amount €" th:value="${transactionDTO.amount}"   min="1"
 									max="1000" > </td>
 								<td><button type="submit" class="btn btn-success"
 										style="background-color: rgb(92, 185, 92);">Pay</button></td>
@@ -69,7 +69,7 @@
 					<table class="table table table-striped">
 						<tr class="table-success "
 							style="background-color: rgb(92, 185, 92);">
-							<th style="color: white">Connections</th>
+							<th style="color: white">Connection</th>
 							<th style="color: white">Description</th>
 							<th style="color: white">Amount</th>
 						</tr>

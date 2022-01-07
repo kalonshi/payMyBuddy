@@ -12,6 +12,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -22,17 +23,17 @@ public class Transaction implements Serializable {
 	@Column(length = 30, nullable = false)
 	private String description;
 	@Column(nullable = false)
-	private Double amount;
+	private Double amount; 
 	private Double interest_rate = 0.05;
-
+	@Column(nullable = false)
 	private Date date;
-
+	
+	@NotNull
 	@ManyToOne
-
 	private User user;
-
+	
+	@NotNull
 	@ManyToOne
-
 	private Connection connection;
 
 	public Transaction() {
@@ -58,19 +59,19 @@ public class Transaction implements Serializable {
 		this.connection = connection;
 	}
 
-	public Transaction(String description, User user) {
-		super();
-		this.description = description;
-		this.user = user;
-	}
+	/*
+	 * public Transaction(String description, User user) { super(); this.description
+	 * = description; this.user = user; }
+	 */
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	/*
+	 * public void setDescription(String description) { this.description =
+	 * description; }
+	 */
 
 	public Double getAmount() {
 		return amount;
@@ -80,29 +81,25 @@ public class Transaction implements Serializable {
 		this.amount = amount;
 	}
 
-	public Double getInterest_rate() {
-		return interest_rate;
-	}
-
-	public Transaction(String description, Double amount, Date date) {
-		super();
-		this.description = description;
-		this.amount = amount;
-
-		this.date = date;
-	}
+	/*
+	 * public Double getInterest_rate() { return interest_rate; }
+	 */
+	/*
+	 * public Transaction(String description, Double amount, Date date) { super();
+	 * this.description = description; this.amount = amount;
+	 * 
+	 * this.date = date; }
+	 */
 
 	public User getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Date getDate() {
-		return date;
-	}
+	/*
+	 * public void setUser(User user) { this.user = user; }
+	 * 
+	 * public Date getDate() { return date; }
+	 */
 
 	public void setDate(Date date) {
 		this.date = date;

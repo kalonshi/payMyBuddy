@@ -16,7 +16,7 @@ import spl.org.payMyBuddy.entity.User;
 import spl.org.payMyBuddy.sec.SecurityConfig;
 
 @Service
-public class iniAppImpl implements InitApp {
+public class IniAppImpl implements InitApp {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired

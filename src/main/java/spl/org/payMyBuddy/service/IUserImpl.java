@@ -34,7 +34,7 @@ public class IUserImpl implements IUser {
 		}
 		return addUser;
 	}
-
+ 
 	@Override
 	public User getUserByEmail(String email) {
 		User getUser = new User();

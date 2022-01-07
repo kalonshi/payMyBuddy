@@ -21,7 +21,7 @@ public class IConnectionImpl implements IConnection {
 		List<Connection> listConnectionByUserConnection = (List<Connection>) user.getConnections();
 		List<User> usersConnection = new ArrayList<User>();
 		Connection newConnection = new Connection();
-		boolean isNewConnection = false;
+		boolean isNewConnection = false; 
 		listConnectionByUserConnection.forEach(con -> {
 			usersConnection.add(con.getConnection());
 		});

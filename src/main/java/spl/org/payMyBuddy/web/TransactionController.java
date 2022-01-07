@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
+import spl.org.payMyBuddy.dot.TransactionDTO;
 import spl.org.payMyBuddy.entity.Connection;
 import spl.org.payMyBuddy.entity.Transaction;
 import spl.org.payMyBuddy.entity.User;
@@ -45,11 +46,10 @@ public class TransactionController {
 
 			List<Connection> connections = (List<Connection>) user.getConnections();
 			model.addAttribute("connectionsByUser", connections);
-			model.addAttribute("transaction", new Transaction());
+			model.addAttribute("transactionDTO", new TransactionDTO());
 			model.addAttribute("solde", user.getSolde());
 			Page<Transaction> pageListe = itransaction.listTransactionByUser(email, page, 3);
-
-			model.addAttribute("transactionsByUser", pageListe.getContent());
+            model.addAttribute("transactionsByUser", pageListe.getContent());
 			model.addAttribute("pages", new int[pageListe.getTotalPages()]);
 			model.addAttribute("currentPage", page);
 		} catch (Exception e) {
@@ -62,20 +62,19 @@ public class TransactionController {
 	}
 
 	@PostMapping("/saveConnection")
-	public String connection2(Model model, Principal principal, @Valid Connection connection,
-			BindingResult bindingResultConnection, Long user_id) {
+	public String connection2(Model model, Principal principal, String label, Long user_id) {
 		String email = principal.getName();
 		User userLink = iUser.getUserByEmail(email);
 		User contact = iUser.getUserbyId(user_id);
 
-		iConnection.addConnection(connection.getLabel(), contact, userLink);
+		iConnection.addConnection(label, contact, userLink);
 		return "redirect:/home";
 
 	}
 
 	@GetMapping("/addConnection")
 	public String connection(Model model) {
-
+ 
 		List<User> users = iUser.users();
 
 		model.addAttribute("usersForConnections", users);
@@ -85,22 +84,22 @@ public class TransactionController {
 	}
 
 	@PostMapping("/addTransaction")
-	public String transaction(Model model, Principal principal, @Valid Transaction transaction,
-			BindingResult bindingResultTransaction, Long connection_id) {
+	public String transaction(Model model, Principal principal, @Valid TransactionDTO transactionDTO,
+			BindingResult bindingResultTransactionDTO, Long connection_id) {
 		String email = principal.getName();
 
-		if (bindingResultTransaction.hasErrors()) {
+		if (bindingResultTransactionDTO.hasErrors()) {
 			return "home";
 		}
 		try {
 
 			Connection selectedConnection = iConnection.getConnectionById(connection_id);
-			String description = transaction.getDescription();
-			double amount = transaction.getAmount();
+			String description = transactionDTO.getDescription();
+			double amount = transactionDTO.getAmount();
 			itransaction.operation(description, amount, email, selectedConnection);
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			model.addAttribute("exception", e);
 		}
 
 		return "redirect:/home";
