@@ -19,13 +19,11 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">Refill solde</div>
 			<div class="panel-body">
-
-				<!-- <form th:action="@{/saveConnection}" method="post"> -->
 				<form th:action="@{/save_Solde}" method="post">
 					<div class="col-md-6">
 						<div class="panel panel-info">
 							<div class="panel-heading">Payment details</div>
-<div class="form-group">
+							<div class="form-group">
 								<label class="control-label">Amount</label> <input
 									class="form-control" type="text" name="amount">
 
@@ -40,7 +38,7 @@
 									class="form-control" type="text" name="number">
 
 							</div>
-							
+
 							<div class="form-group">
 								<label class="control-label">expiration date</label> <input
 									class="form-control" type="date" name="date">
@@ -49,17 +47,10 @@
 							<div class="form-group">
 								<label class="control-label">CV Code</label> <input
 									class="form-control" type="text" name="text">
-
 							</div>
-
-
 						</div>
-
-
-
-					
-					<button type="submit" class="btn btn-info">Confirm</button>
-</div>
+						<button type="submit" class="btn btn-info">Confirm</button>
+					</div>
 				</form>
 
 			</div>

@@ -20,34 +20,29 @@
 			<div class="panel-heading">Add Connection</div>
 			<div class="panel-body">
 
-				<!-- <form th:action="@{/saveConnection}" method="post"> -->
-<form th:action="@{/saveConnection}" method="post">
+
+				<form th:action="@{/saveConnection}" method="post">
 					<div class="col-md-6">
 						<div class="panel panel-info">
 							<div class="panel-heading">Select contact</div>
-							
-								<div class="form-group">
-									<label class="control-label">contacts</label> <select
-										id="user_id" name="user_id" class="form-control">
-										<option th:each="user : ${usersForConnections}"
-											th:value="${user.user_id}" th:utext="${user.email}" />
-									</select>
-								</div>
 
-								<div class="form-group">
-									<label class="control-label">pseudo</label> <input id="label"
-										class="form-control" type="text" name="label"
-										>
-
-								</div>
-
-
-
-
+							<div class="form-group">
+								<label class="control-label">contacts</label> <select
+									id="user_id" name="user_id" class="form-control">
+									<option th:each="user : ${usersForConnections}"
+										th:value="${user.user_id}" th:utext="${user.email}" />
+								</select>
 							</div>
-						
+
+							<div class="form-group">
+								<label class="control-label">pseudo</label> <input id="label"
+									class="form-control" type="text" name="label">
+							</div>
 
 
+
+
+						</div>
 					</div>
 					<button type="submit" class="btn btn-info">Add</button>
 

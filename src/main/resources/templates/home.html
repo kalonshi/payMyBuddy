@@ -46,8 +46,8 @@
 									name="description" placeholder="description"
 									th:value="${transactionDTO.description}"></td>
 								<td><input class="form-control" type="number" name="amount"
-									placeholder="amount €" th:value="${transactionDTO.amount}"   min="1"
-									max="1000" > </td>
+									placeholder="amount €" th:value="${transactionDTO.amount}"
+									min="1" max="1000"></td>
 								<td><button type="submit" class="btn btn-success"
 										style="background-color: rgb(92, 185, 92);">Pay</button></td>
 							</tr>
@@ -61,11 +61,11 @@
 			</button>
 			<a class="btn btn-info" style="background-color: rgb(0, 118, 217);"
 				th:href="@{/rechargeAccount}"> Recharge Account </a>
-			<!-- <div th:if="${transaction}"> -->
+
 			<div class="panel panel-default">
 				<div class="panel-heading">My Transactions</div>
 				<div class="panel-body">
-				
+
 					<table class="table table table-striped">
 						<tr class="table-success "
 							style="background-color: rgb(92, 185, 92);">
@@ -89,6 +89,5 @@
 			</div>
 		</div>
 	</div>
-<!-- </div> -->
 </body>
 </html>

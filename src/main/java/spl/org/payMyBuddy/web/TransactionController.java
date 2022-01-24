@@ -49,7 +49,7 @@ public class TransactionController {
 			model.addAttribute("transactionDTO", new TransactionDTO());
 			model.addAttribute("solde", user.getSolde());
 			Page<Transaction> pageListe = itransaction.listTransactionByUser(email, page, 3);
-            model.addAttribute("transactionsByUser", pageListe.getContent());
+			model.addAttribute("transactionsByUser", pageListe.getContent());
 			model.addAttribute("pages", new int[pageListe.getTotalPages()]);
 			model.addAttribute("currentPage", page);
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class TransactionController {
 
 	@GetMapping("/addConnection")
 	public String connection(Model model) {
- 
+
 		List<User> users = iUser.users();
 
 		model.addAttribute("usersForConnections", users);
@@ -89,6 +89,7 @@ public class TransactionController {
 		String email = principal.getName();
 
 		if (bindingResultTransactionDTO.hasErrors()) {
+
 			return "home";
 		}
 		try {

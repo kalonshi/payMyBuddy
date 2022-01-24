@@ -23,22 +23,22 @@ public class Transaction implements Serializable {
 	@Column(length = 30, nullable = false)
 	private String description;
 	@Column(nullable = false)
-	private Double amount; 
+	private Double amount;
 	private Double interest_rate = 0.05;
 	@Column(nullable = false)
 	private Date date;
-	
+
 	@NotNull
 	@ManyToOne
 	private User user;
-	
+
 	@NotNull
 	@ManyToOne
 	private Connection connection;
 
 	public Transaction() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Transaction(String description, Double amount, User user, Connection connection) {

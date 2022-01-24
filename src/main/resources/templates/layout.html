@@ -11,11 +11,9 @@
 	th:href="@{/css/bootstrap.min.css}" />
 <link rel="stylesheet" type="text/css" href="../static/css/style.css"
 	th:href="@{/css/style.css}" />
-
 </head>
 <body>
 	<header>
-
 		<nav class="navbar navbar-expand-sm bg-light navbar-light">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -27,14 +25,12 @@
 					<li class="active"><a th:href="@{/transfert}">Transfert</a></li>
 					<li><a href="#">Profil</a></li>
 					<li><a href="#">Contacts</a></li>
-					<li><a th:href="@{/login?logout}"><span class="glyphicon glyphicon-user"></span>
-							Log off</a></li>
+					<li><a th:href="@{/login?logout}"><span
+							class="glyphicon glyphicon-user"></span> Log off</a></li>
 				</ul>
 			</div>
 
 		</nav>
-
-
 	</header>
 	<section layout:fragment="content"></section>
 </body>

@@ -14,7 +14,7 @@ public class CustomUserDetails implements UserDetails {
 
 	public CustomUserDetails() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public CustomUserDetails(User user) {

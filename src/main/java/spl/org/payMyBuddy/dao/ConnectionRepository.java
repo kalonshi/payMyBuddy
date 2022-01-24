@@ -11,7 +11,7 @@ public interface ConnectionRepository extends JpaRepository<Connection, Long> {
 
 	public Set<Connection> findByUserEmail(String email);
 	
-	public Set<User> findByConnection(String email);
+	/* public Set<User> findByConnection(String email); */
 
 	public User findByConnectionEmail(String email);
 	

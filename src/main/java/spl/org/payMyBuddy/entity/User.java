@@ -1,4 +1,5 @@
 package spl.org.payMyBuddy.entity;
+
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Column;
@@ -19,8 +20,7 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long user_id;
-	
-	
+
 	@Column(length = 30, nullable = false, unique = true)
 	private String email;
 

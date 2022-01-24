@@ -11,9 +11,9 @@ public interface IUser {
 	public List<User> users();
 
 	public User getUserbyId(Long user_id);
-	
-	public User addMoney(String email,double add);
 
-	public User transfertMoney(double amount,String email);
+	public User addMoney(String email, double add);
+
+	public User transfertMoney(double amount, String email);
 
 }

@@ -26,7 +26,7 @@ public class IniAppImpl implements InitApp {
 
 	@Override
 	public void initUser() {
-		// TODO Auto-generated method stub
+
 		SecurityConfig secu = new SecurityConfig();
 		User adminUser = new User("admin", secu.passwordEncoder().encode("1234"));
 		adminUser.setSolde(200.0);
@@ -50,7 +50,7 @@ public class IniAppImpl implements InitApp {
 
 	@Override
 	public void initConnection() {
-		// TODO Auto-generated method stub
+
 		String[] prenoms = { "Mikeal", "Mohamed", "Patricia", "Sophie", "Samba" };
 		List<User> users = userRepository.findAll();
 
@@ -65,7 +65,7 @@ public class IniAppImpl implements InitApp {
 
 	@Override
 	public void initTransaction() {
-		// TODO Auto-generated method stub
+
 		String[] descriptions = { "Movie ticket", "Travel Ticket", "Restaurant Bill share", "Shopping Bill Share",
 				"FoodTruck Ticket" };
 		double[] amounts = { 10, 145, 32, 16, 20, 52 };

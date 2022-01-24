@@ -7,7 +7,7 @@ public class TransactionDTO {
 	
 	public TransactionDTO() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
