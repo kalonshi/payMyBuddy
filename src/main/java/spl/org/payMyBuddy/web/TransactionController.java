@@ -64,12 +64,15 @@ public class TransactionController {
 	@PostMapping("/saveConnection")
 	public String connection2(Model model, Principal principal, String label, Long user_id) {
 		String email = principal.getName();
+
 		User userLink = iUser.getUserByEmail(email);
 		User contact = iUser.getUserbyId(user_id);
-
-		iConnection.addConnection(label, contact, userLink);
-		return "redirect:/home";
-
+		if (!contact.equals(null) && !label.isEmpty()) {
+			iConnection.addConnection(label, contact, userLink);
+			return "redirect:/home";
+		}
+		model.addAttribute("usersForConnections", iUser.users());
+		return "/addConnection";
 	}
 
 	@GetMapping("/addConnection")

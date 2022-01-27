@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import spl.org.payMyBuddy.entity.User;
 import spl.org.payMyBuddy.service.IUser;
 
@@ -50,7 +49,7 @@ public class UserController {
 			return "register";
 		}
 		iUser.addUser(user.getEmail(), user.getPassword());
-		return "login"; 
+		return "login";
 		/* return "home"; */
 	}
 
