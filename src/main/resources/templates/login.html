@@ -49,10 +49,12 @@
 				</div>
 				<button type="submit" class="btn btn-primary">Login</button>
 			</form>
-			<p>you are not register yet</p>
+			<!-- <p>you are not register yet</p> -->
 
 			<a class="btn btn-info" th:href="@{/register}">Register </a>
-
+   <div class="alert alert-success" th:if="${succes != null}">
+		 <strong>Congratulation, you are successfully register </strong> <br> Logging now!!
+		</div>
 		</div>
 
 	</div>

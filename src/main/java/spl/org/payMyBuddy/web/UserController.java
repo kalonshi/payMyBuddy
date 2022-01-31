@@ -43,14 +43,19 @@ public class UserController {
 	}
 
 	@PostMapping("/save_register")
-	public String addNewUser(Model model, @Valid User user, BindingResult bindingResultUser) {
-		if (bindingResultUser.hasErrors()) {
-
-			return "register";
-		}
-		iUser.addUser(user.getEmail(), user.getPassword());
-		return "login";
-		/* return "home"; */
+	public String addNewUser(Model model,  String email,String password) {
+		if (!email.isEmpty()&&!password.isEmpty()) {
+			
+		iUser.addUser(email,password );
+		
+		String msg="Vous avez bien été enregistré";
+		  model.addAttribute("succes", msg);
+		  return "login"; }
+		
+			return "redirect:/register";
+		
+		
+	
 	}
 
 	@PostMapping("/save_addMoney")
